@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar">
+    </include>
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="364dp"
+        android:layout_marginEnd="180dp"
+        android:text="@string/clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p2LatField"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/p2LongField"
+        android:layout_width="165dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/p2Long"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/p2LatField"
+        android:layout_width="165dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="@string/p2Lat"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/p1LongField"
+        android:layout_width="165dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/p1Long"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/p2LongField"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/p1LatField"
+        android:layout_width="165dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="@string/p1Lat"
+        android:inputType="numberSigned|numberDecimal"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/p2LatField"
+        app:layout_constraintEnd_toStartOf="@+id/p1LongField"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="15dp"
+        android:text="@string/calculate"
+        app:layout_constraintBottom_toTopOf="@+id/distanceLabel"
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/distanceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/emptyDistance"
+        app:layout_constraintBottom_toTopOf="@+id/bearingLabel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bearingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="300dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/emptyBearing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
