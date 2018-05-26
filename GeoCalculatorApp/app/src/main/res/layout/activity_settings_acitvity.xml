@@ -1,58 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsAcitvity"
-    tools:layout_editor_absoluteY="81dp">
-
-    <TextView
-        android:id="@+id/bearingTitleLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bearingUnits"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="112dp" />
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".SettingsAcitvity">
 
     <TextView
         android:id="@+id/distanceTitleLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/distanceUnits"
-        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="65dp" />
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/distanceUnitsPicker"
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bearingTitleLabel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="88dp" />
+        android:text="@string/bearingUnits"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/bearingUnitsPicker"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="137dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/confirmSettingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:tint="@android:color/white"
-        app:srcCompat="@drawable/ic_check_black_24dp"
-        tools:layout_editor_absoluteX="326dp"
-        tools:layout_editor_absoluteY="453dp" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/confirmSettingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:clickable="true"
+            android:src="@drawable/ic_check_black_24dp"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

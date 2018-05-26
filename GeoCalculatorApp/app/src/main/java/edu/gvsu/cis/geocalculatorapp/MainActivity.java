@@ -11,12 +11,14 @@ package edu.gvsu.cis.geocalculatorapp;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -48,14 +50,20 @@ public class MainActivity extends AppCompatActivity {
         TextView distanceLabel = findViewById(R.id.distanceLabel);
         TextView bearingLabel = findViewById(R.id.bearingLabel);
 
+
+        ConstraintLayout layout = findViewById(R.id.MainActivityLayout);
+        layout.setOnTouchListener((v, ev) -> {
+                InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                in.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                return true;
+        });
+
         calculateButton.setOnClickListener(v -> {
 
             // https://stackoverflow.com/questions/1109022/close-hide-the-android-soft-keyboard
-            View view = this.getCurrentFocus();
-            if (view != null) {
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            }
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
 
             // get latitudes and longitudes from fields
             String p1LatStr = p1LatField.getText().toString();
@@ -106,11 +114,9 @@ public class MainActivity extends AppCompatActivity {
         clearButton.setOnClickListener(v -> {
 
             // https://stackoverflow.com/questions/1109022/close-hide-the-android-soft-keyboard
-            View view = this.getCurrentFocus();
-            if (view != null) {
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            }
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
 
             p1LatField.setText("");
             p1LongField.setText("");
@@ -133,8 +139,13 @@ public class MainActivity extends AppCompatActivity {
             this.distanceUnits = data.getStringExtra("distanceUnits");
             this.bearingUnits = data.getStringExtra("bearingUnits");
 
+            TextView distanceLabel = findViewById(R.id.distanceLabel);
+            TextView bearingLabel = findViewById(R.id.bearingLabel);
             Button calculateButton = findViewById(R.id.calculateButton);
-            calculateButton.performClick();
+
+            if (distanceLabel.getText().length() > 9) {
+                calculateButton.performClick();
+            }
         }
     }
 
