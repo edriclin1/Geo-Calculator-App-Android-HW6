@@ -28,8 +28,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String distanceUnits = "kilometers";
-    private String bearingUnits = "degrees";
+    private String distanceUnits = "Kilometers";
+    private String bearingUnits = "Degrees";
 
     public static final int UNITS_SELECTION = 1;
 
@@ -159,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(MainActivity.this, SettingsAcitvity.class);
+        intent.putExtra("distanceUnits", this.distanceUnits);
+        intent.putExtra("bearingUnits", this.bearingUnits);
         startActivityForResult(intent, UNITS_SELECTION);
         return super.onOptionsItemSelected(item);
     }

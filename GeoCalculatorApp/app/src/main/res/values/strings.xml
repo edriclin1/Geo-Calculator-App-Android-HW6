@@ -11,6 +11,8 @@
     <string name="distanceUnits">Distance Units</string>
     <string name="bearingUnits">BearingUnits</string>
     <string name="settings">Settings</string>
+    <string name="searchPrompt">Tired of typing?</string>
+    <string name="search">Search</string>
     <string-array name="distanceUnitsList">
         <item>Kilometers</item>
         <item>Miles</item>

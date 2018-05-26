@@ -28,7 +28,6 @@ public class SettingsAcitvity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_acitvity);
 
-
         FloatingActionButton confirmSettingsButton = findViewById(R.id.confirmSettingsButton);
         confirmSettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,5 +82,18 @@ public class SettingsAcitvity extends AppCompatActivity {
 
             }
         });
+
+        // select current distance and bearing units on spinner
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            distanceUnitsSelection = extras.getString("distanceUnits");
+            bearingUnitsSelection = extras.getString("bearingUnits");
+
+            int distanceUnitsIndex = distanceAdapter.getPosition(distanceUnitsSelection);
+            int bearingUnitsIndex = bearingAdapter.getPosition(bearingUnitsSelection);
+
+            distanceUnitsPicker.setSelection(distanceUnitsIndex);
+            bearingUnitsPicker.setSelection(bearingUnitsIndex);
+        }
     }
 }
