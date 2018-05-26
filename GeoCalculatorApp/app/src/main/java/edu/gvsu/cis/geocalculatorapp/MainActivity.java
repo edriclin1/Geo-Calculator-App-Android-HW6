@@ -36,9 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.app_bar);
-        setSupportActionBar(toolbar);
-
         EditText p1LatField = findViewById(R.id.p1LatField);
         EditText p1LongField = findViewById(R.id.p1LongField);
         EditText p2LatField = findViewById(R.id.p2LatField);

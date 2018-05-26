@@ -5,71 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsAcitvity"
-    tools:layout_editor_absoluteY="25dp">
-
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar">
-    </include>
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/bearingTitleLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:text="@string/bearingUnits"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/distanceTitleLabel"
-        app:layout_constraintTop_toBottomOf="@+id/distanceUnitsPicker" />
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="112dp" />
 
     <TextView
         android:id="@+id/distanceTitleLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="23dp"
         android:text="@string/distanceUnits"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/distanceUnitsPicker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="65dp" />
 
     <Spinner
         android:id="@+id/distanceUnitsPicker"
-        android:layout_width="0dp"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="88dp" />
 
     <Spinner
         android:id="@+id/bearingUnitsPicker"
-        android:layout_width="0dp"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bearingTitleLabel" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="137dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/confirmSettingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_marginEnd="18dp"
         android:clickable="true"
         android:tint="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_check_black_24dp" />
+        app:srcCompat="@drawable/ic_check_black_24dp"
+        tools:layout_editor_absoluteX="326dp"
+        tools:layout_editor_absoluteY="453dp" />
 
 </android.support.constraint.ConstraintLayout>
